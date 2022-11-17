@@ -4,7 +4,7 @@ Take a look at the local setup of this application using virtualisation with Vag
 
 This application was inspired by devopshydclub repository found [here](https://github.com/devopshydclub/vprofile-project)
 
-You can see the most used languages, in this project, below:
+You can see the most used languages in this project below:
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=fahimtq1&theme=blue-green)
 
