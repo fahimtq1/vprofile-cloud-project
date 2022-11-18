@@ -40,13 +40,13 @@ These are the basic steps of the application workflow:
 
 ### Cloud services
 
-- **EC2 instances**
-- **Application Load Balancer**
-- **Autoscaling Group**
-- **Target Group**
-- **Launch configuration**
-- **AMI**
-- **S3 bucket**
+- EC2 instances
+- Application Load Balancer
+- Autoscaling Group
+- Target Group
+- Launch configuration
+- AMI
+- S3 bucket
 
 ## Cloud setup 
 
