@@ -16,9 +16,11 @@ This scenario is of a DevOps engineer who has been given a multi-tier applicatio
 
 ![vprofile-project-architecture](https://user-images.githubusercontent.com/99980305/199768482-3bb654c1-8a40-4352-8e86-49b4ae50875f.png)
 
+Note- Instead of the NGINX service, we will be using an Application Load Balancer (routes HTTP/HTTPS traffic)
+
 ### Services
 
-- **NGINX/Load balancer(ALB)**- a web service used for load balancing and reverse proxying (in this case we will be using an Application Load Balancer in place of the NGINX service)
+- **NGINX/Load balancer(ALB)**- a web service used for load balancing and reverse proxying (in this case we will be using an application load balancer in place of the NGINX service)
 - **Tomcat**- an application service used to run JAVA server pages that are based on web applications
 - **RabbitMQ**- a message broker/queuing agent service (used as a dummy service in this project)
 - **Memcached**- database caching service
@@ -28,8 +30,8 @@ This scenario is of a DevOps engineer who has been given a multi-tier applicatio
 
 These are the basic steps of the application workflow:
 
-- Users send requests that are received by the NGINX service
-- NGINX is a load-balancing service that receives that allows the frontend to listen on port 80 and then routes the request to the application (Tomcat) server on port 8080
+- Users send requests that are received by the load-balancing service
+- The application load balancer is a load-balancing service that receives that allows the frontend to listen on port 80 and then routes the request to the application (Tomcat) server on port 8080
 - The Tomcat server receives the request on port 8080 and communicates with the backend services, on their respective ports, to receive the application content, which can then be routed to the frontend so the users can view it
 
 ## Cloud architecture
