@@ -10,7 +10,7 @@ You can see the most used languages in this project below:
 
 ## Project brief
 
-This scenario is of a DevOps engineer who has been given a multi-tier application stack and has been tasked with deploying the application on the AWS Cloud. The DevOps engineer will manually configure and provision the cloud infrastructure, ready for application deployment. The main benefits of deploying and application on the cloud are high availability and scalability. To learn more about cloud computing and its benefits, click [here](https://github.com/fahimtq1/cloud_computing_basics).
+This scenario is of a DevOps engineer who has been given a multi-tier application stack and has been tasked with deploying an application on the AWS Cloud. The DevOps engineer will manually configure and provision the cloud infrastructure, ready for application deployment. There is currently a desire to reduce the number of applications running on on-site servers to reduce OpEx (operational expenses). The main benefits of deploying and application on the cloud are high availability and scalability. To learn more about cloud computing and its benefits, click [here](https://github.com/fahimtq1/cloud_computing_basics).
 
 ## Application architecture
 
@@ -18,7 +18,7 @@ This scenario is of a DevOps engineer who has been given a multi-tier applicatio
 
 ### Services
 
-- **NGINX**- a web service used for load balancing and reverse proxying
+- **NGINX/Load balancer(ALB)**- a web service used for load balancing and reverse proxying (in this case we will be using an Application Load Balancer in place of the NGINX service)
 - **Tomcat**- an application service used to run JAVA server pages that are based on web applications
 - **RabbitMQ**- a message broker/queuing agent service (used as a dummy service in this project)
 - **Memcached**- database caching service
@@ -29,8 +29,8 @@ This scenario is of a DevOps engineer who has been given a multi-tier applicatio
 These are the basic steps of the application workflow:
 
 - Users send requests that are received by the NGINX service
-- NGINX is a load-balancing service that receives that allows the frontend to listen on port 80 and then routes the request to the app01 server on port 8080
-- Tomcat receives the request on port 8080 and communicates with the backend services, on their respective ports, to receive the application content, which can then be routed to the frontend so the users can view it
+- NGINX is a load-balancing service that receives that allows the frontend to listen on port 80 and then routes the request to the application (Tomcat) server on port 8080
+- The Tomcat server receives the request on port 8080 and communicates with the backend services, on their respective ports, to receive the application content, which can then be routed to the frontend so the users can view it
 
 ## Cloud architecture
 
