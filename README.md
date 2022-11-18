@@ -36,7 +36,7 @@ These are the basic steps of the application workflow:
 
 ## Cloud architecture
 
-![vprofile-cloud-architecture - Copy](https://user-images.githubusercontent.com/99980305/202737402-33c3eb6d-c059-4c81-80d5-b3f529852725.png)
+![vprofile-cloud-architecture](https://user-images.githubusercontent.com/99980305/202738252-d0a9176b-7e8f-42fe-a734-449985724cbc.png)
 
 ### Cloud services
 
