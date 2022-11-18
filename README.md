@@ -90,4 +90,8 @@ For each security group, we will only be creating inbound rules
     - Type Custom TCP, Protocol TCP, Port range 11211, Source security group ID of the Tomcat instances
     - Type SSH, Protocol TCP, Port range 22, Source My IP
 
+- Create key pair
+    - Use the RSA encryption algorithm 
+    - Use the `.pem` format to allow login from the local CLI
+
 ## Conclusion
