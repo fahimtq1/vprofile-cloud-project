@@ -18,7 +18,7 @@ This scenario is of a DevOps engineer who has been given a multi-tier applicatio
 
 Note- Instead of the NGINX service, we will be using an Application Load Balancer (routes HTTP/HTTPS traffic)
 
-### Services
+### Application services
 
 - **NGINX/Load balancer(ALB)**- a web service used for load balancing and reverse proxying (in this case we will be using an application load balancer in place of the NGINX service)
 - **Tomcat**- an application service used to run JAVA server pages that are based on web applications
@@ -38,7 +38,13 @@ These are the basic steps of the application workflow:
 
 ![vprofile-cloud-architecture - Copy](https://user-images.githubusercontent.com/99980305/202737402-33c3eb6d-c059-4c81-80d5-b3f529852725.png)
 
-## Tools 
+### Cloud services
+
+- **EC2 instances**
+- **Application Load Balancer**
+- 
+
+## Tools
 
 ## Cloud setup 
 
