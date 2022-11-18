@@ -42,9 +42,11 @@ These are the basic steps of the application workflow:
 
 - **EC2 instances**
 - **Application Load Balancer**
-- 
-
-## Tools
+- **Autoscaling Group**
+- **Target Group**
+- **Launch configuration**
+- **AMI**
+- **S3 bucket**
 
 ## Cloud setup 
 
