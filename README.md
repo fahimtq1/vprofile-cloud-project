@@ -48,6 +48,25 @@ These are the basic steps of the application workflow:
 - AMI
 - S3 bucket
 
-## Cloud setup 
+## Cloud setup
+
+### Plan
+
+The basic flow of execution is as follows:
+
+- Login to AWS
+- Create key pair
+- Create security groups for the EC2 instances and the load balancer
+- Launch each EC2 instance with their respective user data
+- Create records with the Route 53 service
+- Update the IP addresses in the `application.properties` file with the names of the created records
+- Build the application locally from the source code- this is an artifact
+- Upload the artifact to an S3 bucket
+- Download the artifact from the S3 bucket to the application (Tomcat) EC2 instances
+- Setup the application load balancer with a HTTPS certificate from the ACM (AWS Certificate Manager)
+- Map the load balancer endpoint to the website name in the GoDaddy DNS
+- Build the autoscaling group for the Tomcat instances
+
+### Steps
 
 ## Conclusion
