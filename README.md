@@ -69,4 +69,25 @@ The basic flow of execution is as follows:
 
 ### Steps
 
+Note- prior to the project, a domain was created with a domain registrar and then given a SSL/TLS certificate using the ACM service to establish a HTTPS connection to the website. CNAME validation also had to be established. These steps will not be detailed.
+
+#### Security groups and key pairs
+
+For each security group, we will only be creating inbound rules 
+
+- Security group for the load balancer- this will allow HTTPS and HTTP traffic from any IP address
+    - Type HTTPS, Protocol TCP, Port range 443, Source any IPv4 and any IPv6
+    - Type HTTP, Protocol TCP, Port range 80, Source any IPv4 and any IPv6
+    - Type SSH, Protocol TCP, Port range 22, Source My IP
+
+- Security group for the Tomcat instances- this will allow traffic from the load balancer on port 8080 
+    - Type Custom TCP, Protocol TCP, Port range 8080, Source security group ID of the load balancer
+    - Type SSH, Protocol TCP, Port range 22, Source My IP
+
+- Security group for the backend services- this will give the application instances access to the backend services of the application
+    - Type MYSQL/Aurora, Protocol TCP, Port range 3306, Source security group ID of the Tomcat instances
+    - Type Custom TCP, Protocol TCP, Port range 5672, Source security group ID of the Tomcat instances
+    - Type Custom TCP, Protocol TCP, Port range 11211, Source security group ID of the Tomcat instances
+    - Type SSH, Protocol TCP, Port range 22, Source My IP
+
 ## Conclusion
