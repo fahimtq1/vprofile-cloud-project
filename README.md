@@ -94,4 +94,12 @@ For each security group, we will only be creating inbound rules
     - Use the RSA encryption algorithm 
     - Use the `.pem` format to allow login from the local CLI
 
+#### EC2 instances
+
+#### Building and deploying the artifact
+
+#### Load balancer 
+
+#### Autoscaling group 
+
 ## Conclusion
