@@ -116,6 +116,20 @@ Steps:
 
 #### Route 53
 
+Once each backend service instance is running, the private IP addresses of these instances have to be updated in a Route 53 private hosted zone (domain) for these backend services.
+
+Repeat these steps to make a record for each backend service:
+
+- Give the domain a relevant name and description
+- Select private hosted zone
+- Select create hosted zone
+- In this private hosted zone, select create record
+- Provide a record name that relates to the backend service
+- Select record type A- Routes traffic to an IPv4 address and some AWS resources
+- In Value, paste the private IPv4 address of the backend service instance
+- Select a Simple routing policy
+- Select create record
+
 #### Building and deploying the artifact
 
 #### Load balancer 
