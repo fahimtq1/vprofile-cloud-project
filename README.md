@@ -96,6 +96,26 @@ For each security group, we will only be creating inbound rules
 
 #### EC2 instances
 
+In the `userdata` directory, there are a set of shell scripts that can be used to provision each EC2 instance. The details of each provisioning script can be explored further [here](https://github.com/fahimtq1/vprofile-multi-tier-project), where every command in each script is defined step-by-step.
+
+The order in which the EC2 instances will be provisioned is as follows:
+
+- MySQL instance (database)
+- Memcached instance
+- RabbitMQ instance
+- Tomcat instance
+
+Steps:
+
+- Each of these instances use a CentOS 7 system, which can be found in the AWS Marketplace when choosing the AMI
+- Instance type: t2.micro
+- Key pair: created key pair
+- Select existing security group: choose the relevant security group for the instance being made
+- Configure storage: 8GiB gp2 Root volume
+- Advanced details: paste the relevant provisioning script in the `User data` section for the instance being made
+
+#### Route 53
+
 #### Building and deploying the artifact
 
 #### Load balancer 
