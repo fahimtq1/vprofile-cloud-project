@@ -92,7 +92,7 @@ For each security group, we will only be creating inbound rules
 
 - Create key pair
     - Use the RSA encryption algorithm 
-    - Use the `.pem` format to allow login from the local CLI
+    - Use the `.pem` format to allow login from the terminal
 
 #### EC2 instances
 
