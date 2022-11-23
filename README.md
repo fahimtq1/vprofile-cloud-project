@@ -107,7 +107,7 @@ The order in which the EC2 instances will be provisioned is as follows:
 
 Steps:
 
-- Each of these instances use a CentOS 7 system, which can be found in the AWS Marketplace when choosing the AMI
+- Each of these instances use a CentOS 7 system (apart from the Tomcat instance- Ubuntu 18.04 OS is used), which can be found in the AWS Marketplace when choosing the AMI
 - Instance type: t2.micro
 - Key pair: created key pair
 - Select existing security group: choose the relevant security group for the instance being made
@@ -131,6 +131,20 @@ Repeat these steps to make a record for each backend service:
 - Select create record
 
 #### Building and deploying the artifact
+
+There are a few dependencies required on the localhost for this stage and to install them on a Windows machine [chocolatey](https://chocolatey.org/docs/installation) needs to be installed. Then the following commands can be run on the localhost CLI:
+
+- `choco install jdk8`
+- `choco install maven`
+- `choco install awscli`
+
+Building the artifact:
+
+- `git clone https://github.com/fahimtq1/vprofile-cloud-project.git`- clone this repository onto the localhost
+- `cd src/main/resources`- navigate to the application.properties file location
+- `nano application.properties`- edit the addresses of the backend services to the names of the records that have been created in the private hosted zone:
+
+
 
 #### Load balancer 
 
