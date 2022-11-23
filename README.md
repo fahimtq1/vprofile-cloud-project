@@ -196,8 +196,36 @@ Building the artifact:
 - `apt install telnet`- package used to validate the network connectivity of the instances
 - `telnet db01.vprofile.in 3306`- this step can be repeated for the record of each backend service with their respective port
 
-#### Load balancer 
+#### Load balancer
 
-#### Autoscaling group 
+- Navigate to the EC2 console 
+
+    - Select Target Groups on the sidebar
+    - Select Create target group
+    - Basic configuration - Instances
+    - Give a relevant target group name
+    - Advanced health check settings - Override - 8080 - Healthy threshold 2
+    - Select Next
+    - Register targets - app instance 
+    - Select include as pending
+    - Create target group
+
+- Navigate to the EC2 console
+
+    - Select Load Balancers on the sidebar
+    - Select Create load balancer
+    - Select Application Load Balancer
+    - Give a relevant name
+    - Select Internet-facing
+    - Select all the Availability Zones under Network mapping- this allows the application to be highly available
+    - Security groups - Select the security group for the load balancer
+    - Listener and routing - Add listener - HTTPS 443 - Select target group
+    - Select the SSL/TLS certificate for the registered domain from ACM
+    - Select create load balancer
+
+- Copy the DNS name (this is the endpoint) of the load balancer from it's details tab
+- Go to the domain provider and add a CNAME record, with the DNS name pasted, in the DNS management console
+
+#### Autoscaling group
 
 ## Conclusion
