@@ -146,6 +146,8 @@ Building the artifact:
 
 ![application properties](https://user-images.githubusercontent.com/99980305/203525617-4d0661b3-a1bc-493d-be16-293f7e478c22.png)
 
+- `mvn install`- 
+
 #### Load balancer 
 
 #### Autoscaling group 
