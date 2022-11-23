@@ -1,5 +1,7 @@
 # Multi-Tier Application Deployment on AWS
 
+![MULTI-TIER APPLICATION ON AWS](https://user-images.githubusercontent.com/99980305/203603600-20ae2689-15d5-495d-bac5-f66fffaae508.png)
+
 Take a look at the local setup of this application using virtualisation with Vagrant and VirtualBox [here](https://github.com/fahimtq1/vprofile-multi-tier-project)
 
 This application was inspired by the devopshydclub repository found [here](https://github.com/devopshydclub/vprofile-project)
