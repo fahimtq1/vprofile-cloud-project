@@ -167,7 +167,34 @@ Building the artifact:
 
 - Navigate to the IAM Console on AWS to add an IAM Role to give S3 bucket access to an EC2 instance
 
-    - 
+    - Select Roles
+    - Select Create role
+    - Trusted entity type - AWS service
+    - Use case - EC2
+    - AmazonS3FullAccess permission policy
+    - Give a relevant name and select Create role
+
+- Attach the IAM Role to the Tomcat (application) EC2 instance
+
+    - Navigate to the EC2 console and select the app instance
+    - Actions - Security - Modify IAM role
+    - Select the created IAM role and then Update IAM role
+
+- Connect to the app instance via SSH from the localhost CLI
+- `sudo -i`- gives root user permissions 
+- `systemctl status tomcat8`- validate the service
+- `cd /var/lib/tomcat8/webapps`- navigate to the webapps directory of the tomcat8 service
+- `systemctl stop tomcat8`- stop the service before making configuration changes
+- `rm -rf ROOT`- removes the default application
+- `cd`- navigate to the home location
+- `apt install awscli`- doesn't need to be configured, as the EC2 instance has permissions from the attached IAM role
+- `aws s3 ls s3://bucket-name`- view the objects in the S3 bucket
+- `aws s3 cp S3://bucket-name/vprofile-v2.war /tmp/vprofile-v2.war`- copy the artifact from the S3 bucket to the EC2 instance /tmp directory
+- `cp /tmp/vprofile-v2.war /var/lib/tomcat8/webapps/ROOT.war`- the artifact is copied into the tomcat8 service directory as the new default application
+- `systemctl start tomcat8`- restarts the service with the new default application
+- `cat /var/lib/tomcat8/webapps/ROOT/WEB-INF/classes/application.properties`- validate the application.properties file 
+- `apt install telnet`- package used to validate the network connectivity of the instances
+- `telnet db01.vprofile.in 3306`- this step can be repeated for the record of each backend service with their respective port
 
 #### Load balancer 
 
