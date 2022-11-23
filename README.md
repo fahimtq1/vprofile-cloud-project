@@ -144,7 +144,7 @@ Building the artifact:
 - `cd src/main/resources`- navigate to the application.properties file location
 - `nano application.properties`- edit the addresses of the backend services to the names of the records that have been created in the private hosted zone:
 
-
+![application properties](https://user-images.githubusercontent.com/99980305/203525617-4d0661b3-a1bc-493d-be16-293f7e478c22.png)
 
 #### Load balancer 
 
