@@ -146,7 +146,28 @@ Building the artifact:
 
 ![application properties](https://user-images.githubusercontent.com/99980305/203525617-4d0661b3-a1bc-493d-be16-293f7e478c22.png)
 
-- `mvn install`- 
+- `mvn install`- run this command in the pom.xml location
+- `ls target`- validate the installation by checking if vprofile-v2.war (the artifact) is present in the target directory
+
+- Navigate to the IAM Console on AWS to add an IAM User to allow S3 programmatic access
+    
+    - Select Users
+    - Select Add users
+    - Give a relevant name
+    - Select AWS credential type - Access key- Programmatic access
+    - Select Next
+    - Select Attach existing policies directly - AmazonS3FullAccess policy
+
+- Once the IAM User has been created, an Access key ID and a Secret access key- these will be used to configure awscli
+- `aws configure`- input this in the CLI and paste the correct credential information
+- `aws s3 mb s3://bucket-name`- creates an S3 bucket
+- `cd target`- navigate to the target directory
+- `aws s3 cp vprofile-v2.war s3://bucket-name/vprofile-v2.war`- copies the artifact into the S3 bucket with the same name
+- `aws s3 ls s3://bucket-name`- validates the copy by listing the objects inside the bucket
+
+- Navigate to the IAM Console on AWS to add an IAM Role to give S3 bucket access to an EC2 instance
+
+    - 
 
 #### Load balancer 
 
