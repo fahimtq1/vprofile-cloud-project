@@ -228,4 +228,27 @@ Building the artifact:
 
 #### Autoscaling group
 
+- Create an AMI of the app instance - Select instance - Actions - Image and templates - Create image
+
+- Create launch configuration:
+
+    - Give a relevant name
+    - Select the app instance AMI
+    - Select the IAM role that permits S3 access
+    - Additional configuration - select enable EC2 instance detailed monitoring wihtin CloudWatch7
+    - Security groups - select the application security group
+    - Key pair - select the relevant key pair 
+
+- Create Auto Scaling group 
+
+    - Give a relevant name
+    - Switch to launch configuration - select the relevant launch configuration 
+    - Select next - Network - choose all of the AZs
+    - Select next - Attach to an existing load balancer - Choose from your load balancer target groups - Select relevant target group 
+    - Select next - select desired group size capacities 
+    - Select target tracking scaling policy - Choose metric type and target value
+    - Create Auto Scaling group
+
 ## Conclusion
+
+In conclusion, the cloud architecture was built on AWS, using a variety of services. The application was built locally and then securely transferred to an S3 bucket, so that the EC2 instances could access the application. To make the application highly available and scalable, an autoscaling group was made and the application was deployed across several Availability Zones. 
